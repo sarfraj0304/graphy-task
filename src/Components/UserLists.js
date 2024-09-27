@@ -17,7 +17,7 @@ import { useNavigate } from "react-router";
 const UserLists = () => {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [handler, setHandler] = useState({
     error: null,
     loading: false,
@@ -126,7 +126,7 @@ const UserLists = () => {
           >
             <CircularProgress size={40} sx={{ color: "#1976d2" }} />
           </Box>
-        ) : !data?.items?.length ? (
+        ) : data && !data?.items?.length ? (
           <Typography
             variant="body1"
             color="error"
