@@ -49,7 +49,10 @@ const Repositories = ({ username, repos, ...props }) => {
                   <a
                     href={repo.html_url}
                     target="_blank"
-                    style={{ color: "#1976d2" }}
+                    style={{
+                      color: "#1976d2",
+                      wordBreak: "break-word",
+                    }}
                   >
                     {repo.name}
                   </a>

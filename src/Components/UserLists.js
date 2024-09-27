@@ -126,6 +126,15 @@ const UserLists = () => {
           >
             <CircularProgress size={40} sx={{ color: "#1976d2" }} />
           </Box>
+        ) : !data?.items?.length ? (
+          <Typography
+            variant="body1"
+            color="error"
+            align="center"
+            sx={{ fontSize: "25px" }}
+          >
+            {"User Not Found!"}
+          </Typography>
         ) : (
           <Grid2
             sx={{
@@ -186,7 +195,7 @@ const UserLists = () => {
         )}
       </Grid2>
 
-      {data?.items?.length && (
+      {data?.items?.length ? (
         <Grid2
           sx={{
             width: "100%",
@@ -210,7 +219,7 @@ const UserLists = () => {
             }}
           />
         </Grid2>
-      )}
+      ) : null}
     </Grid2>
   );
 };
